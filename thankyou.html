@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Capture | Thank You</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="thankyou-page">
+  <div class="thankyou-overlay"></div>
+  <main class="thankyou-shell">
+    <div class="thankyou-card">
+      <p class="eyebrow">Session request sent</p>
+      <h1>Thank you!</h1>
+      <p class="lede">Your message is on its way. I’ll reply shortly to confirm details and timing.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="index.html">View portfolio</a>
+        <a class="btn btn-outline" href="contact.html">Send another request</a>
+      </div>
+      <div class="share-row">
+        <button id="shareBtn" class="btn btn-outline share-btn">Share with friends →</button>
+        <p id="shareStatus" class="subtext">Invite classmates who need photos too.</p>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    const shareBtn = document.getElementById('shareBtn');
+    const shareStatus = document.getElementById('shareStatus');
+    const shareUrl = new URL('index.html', window.location.href).href;
+
+    const updateStatus = (msg) => {
+      if (shareStatus) shareStatus.textContent = msg;
+    };
+
+    shareBtn?.addEventListener('click', async () => {
+      const shareData = {
+        title: 'CAPTURE Portfolio',
+        text: 'Check out CAPTURE portrait sessions.',
+        url: shareUrl
+      };
+      if (navigator.share) {
+        try {
+          await navigator.share(shareData);
+          updateStatus('Shared! Thanks for spreading the word.');
+        } catch (err) {
+          updateStatus('Share canceled. Try again if you want.');
+        }
+        return;
+      }
+      if (navigator.clipboard?.writeText) {
+        try {
+          await navigator.clipboard.writeText(shareUrl);
+          updateStatus('Link copied. Paste it to share.');
+          return;
+        } catch (err) {
+          // fall through to prompt
+        }
+      }
+      window.prompt('Copy this link and share:', shareUrl);
+      updateStatus('Link ready to share.');
+    });
+  </script>
+</body>
+</html>

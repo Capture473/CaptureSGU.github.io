@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Capture | Contact</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="contact-page">
+  <a class="back-link" href="index.html">← Back to portfolio</a>
+  <div class="contact-shell">
+    <article class="contact-card">
+      <div class="brand brand-contact">
+        <img src="LOGO w.png" alt="Capture logo">
+        <span>CAPTURE</span>
+      </div>
+      <div class="label-sgu">St. George's University Students</div>
+      <div>
+        <p class="eyebrow">Bookings & Collaborations</p>
+        <h1>Contact me</h1>
+        <p class="contact-lede">For St. George's University students: share your idea, date, and timing and I’ll reply quickly.</p>
+      </div>
+
+      <form id="contactForm">
+        <div class="form-grid">
+          <div>
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" placeholder="Your name" required>
+          </div>
+          <div>
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="you@example.com" required>
+          </div>
+        </div>
+
+        <label for="message">Message</label>
+        <textarea id="message" name="message" placeholder="Project details, location, mood, guests..." required></textarea>
+
+        <div class="calendar-row">
+          <div>
+            <label for="date">Preferred date</label>
+            <input type="date" id="date" name="date">
+          </div>
+          <div>
+            <label for="time">Preferred time</label>
+            <input type="time" id="time" name="time">
+          </div>
+        </div>
+
+        <div class="contact-actions">
+          <button type="submit" class="btn btn-primary">Send request</button>
+          <p class="subtext" id="formStatus">This opens your email app and sends to capturegnd@gmail.com.</p>
+        </div>
+      </form>
+    </article>
+  </div>
+
+  <script src="contact.js"></script>
+</body>
+</html>

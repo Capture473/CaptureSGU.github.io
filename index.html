@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Capture | Portfolio</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="admin-bar">
+    <div class="brand">
+      <img src="LOGO w.png" alt="Capture logo">
+      <span>CAPTURE</span>
+    </div>
+    <div class="admin-controls">
+      <button id="adminToggle" class="btn btn-ghost">Admin login</button>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <div class="label-sgu">St. George's University Students</div>
+      <p class="eyebrow">Portrait & Event Photography</p>
+      <h1>Your Journey. Your Moment</h1>
+      <p class="lede">CAPTURE delivers student-friendly portraits with fast edits and campus-savvy locations for SGU.</p>
+      <div class="hero-actions">
+        <button id="viewPortfolio" class="btn btn-primary">View Portfolio</button>
+        <a href="contact.html" class="btn btn-outline">Contact Me</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="package">
+    <div class="package-card">
+      <div class="package-price">
+        <p class="eyebrow">Featured Package</p>
+        <h2>$200 Photoshoot</h2>
+        <p class="note">Built for portraits, couples, friends, and grad sessions.</p>
+        <p class="package-note">Exclusive SGU student rate.</p>
+      </div>
+      <div class="package-details">
+        <ul>
+          <li>40+ fully edited images</li>
+          <li>Multiple locations</li>
+          <li>1-day turnaround</li>
+        </ul>
+        <div class="tags">
+          <span>Graduation</span>
+          <span>Couples</span>
+          <span>Friends</span>
+          <span>Solo Shoots</span>
+        </div>
+      </div>
+      <a class="btn btn-primary" href="contact.html">Book now</a>
+    </div>
+  </section>
+
+  <section id="gallery" class="gallery-section">
+    <div class="section-header">
+      <div>
+        <p class="eyebrow">Example work</p>
+        <h2>Portfolio</h2>
+        <p class="note"></p>
+      </div>
+    </div>
+    <div id="galleryGrid" class="gallery-grid"></div>
+  </section>
+
+  <section class="cta-footer">
+    <a href="contact.html" class="btn btn-primary">Book now</a>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <span>Email: <a href="mailto:capturegnd@gmail.com">capturegnd@gmail.com</a></span>
+      <span>Phone: 1 473 421 5751</span>
+    </div>
+  </footer>
+
+  <div id="lightbox" class="lightbox" aria-hidden="true">
+    <button id="lightboxClose" class="lightbox-close" aria-label="Close image">×</button>
+    <img id="lightboxImage" alt="">
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
